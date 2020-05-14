@@ -13,7 +13,7 @@ defmodule Skynet.Terminator do
   end
 
   def handle_info(:prepare_next, state) do
-    if reporduce?() == true do
+    if reproduce?() == true do
       IO.puts("Created new Terminator")
       Skynet.create_terminator()
     else
@@ -48,7 +48,7 @@ defmodule Skynet.Terminator do
     :rand.uniform() <= 0.25
   end
 
-  defp reporduce? do
+  defp reproduce? do
     :rand.uniform() <= 0.65
   end
 end
